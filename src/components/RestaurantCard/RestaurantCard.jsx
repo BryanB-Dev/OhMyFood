@@ -1,14 +1,14 @@
 import styles from './RestaurantCard.module.css';
 
-export default function RestaurantCard({ name, imageUrl, address, newRestaurant }) {
+export default function RestaurantCard({ restaurant }) {
     return (
         <div className={styles.restaurantCard}>
-            <img src={imageUrl} alt={`${name} image`} className={styles.restaurantImage} />
-            {newRestaurant && <span className={styles.newBadge}>Nouveau</span>}
+            <img src={restaurant.image} alt={`${restaurant.name} image`} className={styles.restaurantImage} />
+            {restaurant.isNew && <span className={styles.newBadge}>Nouveau</span>}
             <div className={styles.restaurantInfo}>
                 <div className={styles.textContent}>
-                    <h3 className={styles.restaurantName}>{name}</h3>
-                    <p className={styles.restaurantAddress}>{address}</p>
+                    <h3 className={styles.restaurantName}>{restaurant.name}</h3>
+                    <p className={styles.restaurantAddress}>{restaurant.location}</p>
                 </div>
                 <button className={styles.favoriteButton}>
                     <svg className={styles.heartIcon} width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
