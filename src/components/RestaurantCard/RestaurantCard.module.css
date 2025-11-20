@@ -98,6 +98,15 @@
   opacity: 1;
 }
 
+/* État liked permanent */
+.favoriteButton.liked .heartIcon {
+  opacity: 0;
+}
+
+.favoriteButton.liked .heartIconHover {
+  opacity: 1;
+}
+
 .newBadge {
   position: absolute;
   top: 12px;
