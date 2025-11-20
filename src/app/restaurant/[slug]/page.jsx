@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import restaurantsData from "@/data/restaurants.json";
 import RestaurantHeader from "@/components/RestaurantHeader/RestaurantHeader";
 import MenuItem from "@/components/MenuItem/MenuItem";
@@ -9,6 +10,11 @@ export default async function RestaurantPage({ params }) {
   
   // Recherche du restaurant par slug
   const restaurant = restaurantsData.restaurants.find(r => r.slug === slug);
+  
+  // Si le restaurant n'existe pas, déclencher la page 404
+  if (!restaurant) {
+    notFound();
+  }
 
   return (
     <div>
